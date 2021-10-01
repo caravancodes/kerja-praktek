@@ -1,0 +1,1102 @@
+var elArrowImgUp                = 'data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzODYuMjU3IDM4Ni4yNTciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM4Ni4yNTcgMzg2LjI1NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8cG9seWdvbiBwb2ludHM9IjE5My4xMjksOTYuODc5IDAsMjg5LjM3OSAzODYuMjU3LDI4OS4zNzkgIiBmaWxsPSIjM2Q5NDAwIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=';
+var elArrowImgDown              = 'data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzODYuMjU3IDM4Ni4yNTciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM4Ni4yNTcgMzg2LjI1NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8cG9seWdvbiBwb2ludHM9IjAsOTYuODc5IDE5My4xMjksMjg5LjM3OSAzODYuMjU3LDk2Ljg3OSAiIGZpbGw9IiNhMTFiMGEiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==';
+
+var propsImageReset = 'border: 0; position: inherit; max-width: inherit; left: inherit; right: inherit; top: inherit; bottom: inherit; margin-bottom:inherit;';
+
+var cccCurrentTheme = {
+    General: {
+      background: '#FFF',
+		  borderWidth: '1px',
+	    borderColor: '#e0e6ef'
+		},
+		Tabs: {
+		  background: '#F5F5F5',
+		  color: '#000',			
+		  activeBackground: '#FFF',
+		  activeColor: '#000',
+		},			
+		Row: {
+		  color: '#000',
+		  borderColor: '#E0E6EF'
+		},			
+		Trend: {
+		  colorUp: '#3d9400',
+		  colorDown: '#A11B0A',
+		  colorUnchanged: '#2C4C76'				
+		},			
+		Conversion: {
+		  background: 'transparent',
+		  lineHeight: '20px',
+		  color: '#000',
+		}
+};
+
+
+if (typeof cccTheme !== 'undefined') {
+  for(var key in cccCurrentTheme) {
+    var group = cccCurrentTheme[key];
+    for(var prop in group) {
+      if(!group.hasOwnProperty(prop)) continue;
+      if(cccTheme.hasOwnProperty(key) && cccTheme[key].hasOwnProperty(prop)) {
+        cccCurrentTheme[key][prop] = cccTheme[key][prop];
+      }
+    }
+  }
+}
+
+if (typeof cccThemeV1Multi !== 'undefined') {
+  for(var key in cccCurrentTheme) {
+    var group = cccCurrentTheme[key];
+    for(var prop in group) {
+      if(!group.hasOwnProperty(prop)) continue;
+      if(cccThemeV1Multi.hasOwnProperty(key) && cccThemeV1Multi[key].hasOwnProperty(prop)) {
+        cccCurrentTheme[key][prop] = cccThemeV1Multi[key][prop];
+      }
+    }
+  }
+}
+
+var embedable=document.createElement("div");
+var embedablePriceInfo = document.createElement("div");
+
+embedable.className = "ccc-widget ccc-multi";
+
+var labelDiv  = document.createElement("div");
+var menu      = document.createElement("div");
+var coin1Div  = document.createElement("div");
+var coin2Div  = document.createElement("div");
+var coin3Div  = document.createElement("div");
+var coin4Div  = document.createElement("div");
+var coin5Div  = document.createElement("div");
+
+embedablePriceInfo.style.borderRadius = "4px 4px 0px 0px";
+embedablePriceInfo.style.border       = '1px solid ' + cccCurrentTheme.General.borderColor;
+//embedablePriceInfo.style.boxShadow    = "0 1px 1px rgba(0,0,0,.05)";	
+
+menu.style.overflow = 'hidden';
+  
+embedablePriceInfo.appendChild(menu);
+  
+var tabOnClick = function(sym) {
+  var elsTabs = document.querySelectorAll('[class^="ccc-tab-header-"]');
+  
+  for (var i = 0; i < elsTabs.length; ++i) {
+      var el = elsTabs[i];
+    
+      if('ccc-tab-header-' + sym == el.className) {
+        el.style.background = cccCurrentTheme.Tabs.activeBackground;
+        el.style.color = cccCurrentTheme.Tabs.activeColor;
+      }
+      else {
+        el.style.background = cccCurrentTheme.Tabs.background;
+      }
+  }      
+  
+  var elsContents = document.querySelectorAll('[class^="ccc-tab-content-"]');
+  for (var i = 0; i < elsContents.length; ++i) {
+      var el = elsContents[i];
+   
+      if('ccc-tab-content-' + sym == el.className) {
+        el.style.display = 'block';
+      }
+      else {
+        el.style.display = 'none';
+      }
+  }
+  
+  return false;
+  
+}  
+
+
+  
+  
+  var tab                   = document.createElement('a');
+  tab.className             = 'ccc-tab-header-USD';    
+  tab.style.display         = 'block';
+  tab.rel                   = 'nofollow';
+  tab.style.background      = cccCurrentTheme.Tabs.activeBackground;
+  
+  tab.style.color           = cccCurrentTheme.Tabs.activeColor + '!important';
+  
+  tab.style.color           = cccCurrentTheme.Tabs.color;
+
+  tab.style.textDecoration  = 'none';    
+  tab.style.lineHeight      = '37px';
+  tab.style.float           = 'left';
+  tab.style.width           = '25%';
+  tab.style.textAlign       = 'center';
+  tab.style.fontWeight      = 'bold';
+  tab.href                  = '';
+  tab.innerHTML             = 'USD';
+  tab.onclick               = function() {
+    tabOnClick('USD');
+    return false;
+  }; 
+  menu.appendChild(tab);
+  
+  
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/btc/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 6,114.41 <span style="font-weight: normal;">(0.81%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19633/btc.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">BTC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/eth/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 436.67 <span style="font-weight: normal;">(2.90%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20646/eth_logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETH</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xmr/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 130.24 <span style="font-weight: normal;">(4.70%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19969/xmr.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XMR</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/ltc/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 79.02 <span style="font-weight: normal;">(1.59%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19782/litecoin-logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">LTC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/dash/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorDown  + ';">$ 222.81 <span style="font-weight: normal;">(-2.04%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33842920/dash.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DASH *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/doge/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 0.002490 <span style="font-weight: normal;">(0.24%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19684/doge.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DOGE</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/zec/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 163.50 <span style="font-weight: normal;">(2.65%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/351360/zec.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ZEC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xem/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 0.1585 <span style="font-weight: normal;">(3.80%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20490/xem.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XEM</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/waves/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 2.69 <span style="font-weight: normal;">(5.68%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/27010639/waves2.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">WAVES *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-USD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/etc/overview/USD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "block"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">$ 15.34 <span style="font-weight: normal;">(4.35%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33752295/etc_new.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+
+
+  
+  
+  var tab                   = document.createElement('a');
+  tab.className             = 'ccc-tab-header-CNY';    
+  tab.style.display         = 'block';
+  tab.rel                   = 'nofollow';
+  tab.style.background      = cccCurrentTheme.Tabs.background;
+  
+  tab.style.color           = cccCurrentTheme.Tabs.color;
+
+  tab.style.textDecoration  = 'none';    
+  tab.style.lineHeight      = '37px';
+  tab.style.float           = 'left';
+  tab.style.width           = '25%';
+  tab.style.textAlign       = 'center';
+  tab.style.fontWeight      = 'bold';
+  tab.href                  = '';
+  tab.innerHTML             = 'CNY';
+  tab.onclick               = function() {
+    tabOnClick('CNY');
+    return false;
+  }; 
+  menu.appendChild(tab);
+  
+  
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/btc/overview/CNY";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorDown  + ';">¥ 41,095.5 <span style="font-weight: normal;">(-6.06%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19633/btc.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">BTC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/eth/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 2,937.51 <span style="font-weight: normal;">(1.49%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20646/eth_logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETH *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xmr/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 876.57 <span style="font-weight: normal;">(3.54%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19969/xmr.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XMR *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/ltc/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 530.95 <span style="font-weight: normal;">(0.08%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19782/litecoin-logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">LTC *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/dash/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorDown  + ';">¥ 1,497.52 <span style="font-weight: normal;">(-2.04%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33842920/dash.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DASH *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/doge/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUnchanged  + ';">¥ 0.01644 <span style="font-weight: normal;">(0.00%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19684/doge.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DOGE *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/zec/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 1,102.18 <span style="font-weight: normal;">(1.71%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/351360/zec.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ZEC *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xem/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 1.03 <span style="font-weight: normal;">(2.21%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20490/xem.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XEM *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/waves/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 18.05 <span style="font-weight: normal;">(5.68%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/27010639/waves2.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">WAVES *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-CNY';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/etc/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">¥ 103.27 <span style="font-weight: normal;">(3.08%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33752295/etc_new.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETC *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+
+
+  
+  
+  var tab                   = document.createElement('a');
+  tab.className             = 'ccc-tab-header-BTC';    
+  tab.style.display         = 'block';
+  tab.rel                   = 'nofollow';
+  tab.style.background      = cccCurrentTheme.Tabs.background;
+  
+  tab.style.color           = cccCurrentTheme.Tabs.color;
+
+  tab.style.textDecoration  = 'none';    
+  tab.style.lineHeight      = '37px';
+  tab.style.float           = 'left';
+  tab.style.width           = '25%';
+  tab.style.textAlign       = 'center';
+  tab.style.fontWeight      = 'bold';
+  tab.href                  = '';
+  tab.innerHTML             = 'BTC';
+  tab.onclick               = function() {
+    tabOnClick('BTC');
+    return false;
+  }; 
+  menu.appendChild(tab);
+  
+  
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/eth/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.07148 <span style="font-weight: normal;">(1.49%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20646/eth_logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETH</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xmr/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.02133 <span style="font-weight: normal;">(3.54%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19969/xmr.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XMR</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/ltc/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.01292 <span style="font-weight: normal;">(0.08%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19782/litecoin-logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">LTC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/dash/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorDown  + ';">Ƀ 0.03644 <span style="font-weight: normal;">(-2.04%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33842920/dash.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DASH</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/doge/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUnchanged  + ';">Ƀ 0.00000040 <span style="font-weight: normal;">(0.00%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19684/doge.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DOGE</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/zec/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.02682 <span style="font-weight: normal;">(1.71%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/351360/zec.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ZEC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xem/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.00002495 <span style="font-weight: normal;">(2.21%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20490/xem.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XEM</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/waves/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.0004392 <span style="font-weight: normal;">(5.68%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/27010639/waves2.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">WAVES</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-BTC';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/etc/overview/BTC";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Ƀ 0.002513 <span style="font-weight: normal;">(3.08%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33752295/etc_new.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+
+
+  
+  
+  var tab                   = document.createElement('a');
+  tab.className             = 'ccc-tab-header-GOLD';    
+  tab.style.display         = 'block';
+  tab.rel                   = 'nofollow';
+  tab.style.background      = cccCurrentTheme.Tabs.background;
+  
+  tab.style.color           = cccCurrentTheme.Tabs.color;
+
+  tab.style.textDecoration  = 'none';    
+  tab.style.lineHeight      = '37px';
+  tab.style.float           = 'left';
+  tab.style.width           = '25%';
+  tab.style.textAlign       = 'center';
+  tab.style.fontWeight      = 'bold';
+  tab.href                  = '';
+  tab.innerHTML             = 'GOLD';
+  tab.onclick               = function() {
+    tabOnClick('GOLD');
+    return false;
+  }; 
+  menu.appendChild(tab);
+  
+  
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/btc/overview/GOLD";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 145.96 <span style="font-weight: normal;">(0.02%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19633/btc.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">BTC</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/eth/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 10.43 <span style="font-weight: normal;">(1.49%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20646/eth_logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETH *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xmr/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 3.11 <span style="font-weight: normal;">(3.54%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19969/xmr.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XMR *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/ltc/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 1.89 <span style="font-weight: normal;">(0.08%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19782/litecoin-logo.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">LTC *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/dash/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorDown  + ';">Gold g 5.32 <span style="font-weight: normal;">(-2.04%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33842920/dash.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DASH *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/doge/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUnchanged  + ';">Gold g 0.00005838 <span style="font-weight: normal;">(0.00%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgDown + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/19684/doge.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">DOGE *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/zec/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 3.91 <span style="font-weight: normal;">(1.71%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/351360/zec.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ZEC *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/xem/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 0.003642 <span style="font-weight: normal;">(2.21%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/20490/xem.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">XEM *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/waves/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 0.06411 <span style="font-weight: normal;">(5.68%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/27010639/waves2.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">WAVES *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+      priceDiv                        = document.createElement('a');
+      priceDiv.className              = 'ccc-tab-content-GOLD';
+      priceDiv.rel                    = 'nofollow';
+      priceDiv.style.display          = 'block';
+      priceDiv.style.background       = cccCurrentTheme.Tabs.activeBackground;
+      
+        priceDiv.href                 = "https://www.cryptocompare.com/coins/etc/overview/";
+      
+      priceDiv.target                 = '_blank';
+      priceDiv.style.borderBottom     = '1px solid ' + cccCurrentTheme.Row.borderColor;
+      priceDiv.style.overflow         = 'hidden';
+      priceDiv.style.fontSize         = '14px';
+      priceDiv.style.color            = '#000';
+      priceDiv.style.fontWeight       = '700';
+      priceDiv.style.lineHeight       = '36px';
+      priceDiv.style.paddingLeft      = '10px';
+      priceDiv.style.paddingRight     = '10px';
+      priceDiv.style.cursor           = 'pointer';
+      priceDiv.style.display          =  "none"; ;
+      priceDiv.innerHTML              = '<div style="float: right; line-height: 35px; font-size: 14px; font-weight: bold; color:' + cccCurrentTheme.Trend.colorUp  + ';">Gold g 0.3668 <span style="font-weight: normal;">(3.08%)<img style="width: 12px; height: 12px; margin-left: 5px; vertical-align: inherit; ' + propsImageReset + '" src="' + elArrowImgUp + '" /></span></div><div style="float: left;"><img style="width: 20px; height: 20px; vertical-align: middle; margin-right: 10px;' + propsImageReset + '" src="https://www.cryptocompare.com/media/33752295/etc_new.png?width=20"> <span style="vertical-align: middle; display: inline-block; color: ' + cccCurrentTheme.Row.color  + ';">ETC *</span></div>';
+      embedablePriceInfo.appendChild(priceDiv);
+      
+
+
+
+embedable.appendChild(embedablePriceInfo);
+
+
+var conversionSymbolExplanationDiv  = document.createElement("div");
+conversionSymbolExplanationDiv.className        = "div-symbol-explanation";	
+conversionSymbolExplanationDiv.style.background = cccCurrentTheme.Conversion.background;
+conversionSymbolExplanationDiv.style.color = cccCurrentTheme.Conversion.color;
+conversionSymbolExplanationDiv.style.textAlign = 'right';
+conversionSymbolExplanationDiv.style.fontSize = '11px';
+conversionSymbolExplanationDiv.style.fontWeight = 'normal';
+conversionSymbolExplanationDiv.style.fontStyle = 'italic';
+conversionSymbolExplanationDiv.style.lineHeight = cccCurrentTheme.Conversion.lineHeight;
+conversionSymbolExplanationDiv.style.marginRight = '0px';
+conversionSymbolExplanationDiv.style.paddingRight = '10px';
+conversionSymbolExplanationDiv.style.marginBottom = '3px';
+conversionSymbolExplanationDiv.innerHTML= '* Price & chart conversion through BTC';
+embedable.appendChild(conversionSymbolExplanationDiv);
+
+
+
+
+document.currentScript.parentNode.appendChild(embedable);

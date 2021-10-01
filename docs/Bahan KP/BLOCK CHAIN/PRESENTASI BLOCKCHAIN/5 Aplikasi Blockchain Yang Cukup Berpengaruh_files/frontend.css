@@ -1,0 +1,1529 @@
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: "";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+@font-face {
+    font-family: ico-listing-manager;
+    src: url(../font/ico-listing-manager.eot?4963673);
+    src: url(../font/ico-listing-manager.eot?4963673#iefix) format('embedded-opentype'), url(../font/ico-listing-manager.woff?4963673) format('woff'), url(../font/ico-listing-manager.ttf?4963673) format('truetype'), url(../font/ico-listing-manager.svg?4963673#ico-listing-manager) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: jm-logo;
+    src: url(../font/jm-logo/jm.eot?ycsbky);
+    src: url(../font/jm-logo/jm.eot?#iefixycsbky) format('embedded-opentype'), url(../font/jm-logo/jm.woff?ycsbky) format('woff'), url(../font/jm-logo/jm.ttf?ycsbky) format('truetype'), url(../font/jm-logo/jm.svg?ycsbky#icomoon) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+.jm-icon {
+    font-family: ico-listing-manager!important;
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em
+}
+
+.display-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-family: ico-listing-manager!important;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline
+}
+
+.ico-listing-manager-error,
+.ico-listing-manager-info,
+.ico-listing-manager-message {
+    padding: 1em 2em 1em 3.5em!important;
+    margin: 0 0 2em!important;
+    position: relative;
+    background-color: #fff;
+    color: #666;
+    border-top: 3px solid #999;
+    list-style: none outside!important;
+    width: auto;
+    zoom: 1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2)
+}
+
+.ico-listing-manager-error:after,
+.ico-listing-manager-error:before,
+.ico-listing-manager-info:after,
+.ico-listing-manager-info:before,
+.ico-listing-manager-message:after,
+.ico-listing-manager-message:before {
+    content: "";
+    display: table
+}
+
+.ico-listing-manager-error:after,
+.ico-listing-manager-info:after,
+.ico-listing-manager-message:after {
+    clear: both
+}
+
+.ico-listing-manager-error:before,
+.ico-listing-manager-info:before,
+.ico-listing-manager-message:before {
+    content: "";
+    font-family: sans-serif;
+    display: inline-block;
+    position: absolute;
+    top: 1em;
+    left: 1.5em
+}
+
+.ico-listing-manager-error li,
+.ico-listing-manager-info li,
+.ico-listing-manager-message li {
+    list-style: none outside!important;
+    padding-left: 0!important;
+    margin-left: 0!important
+}
+
+.ico-listing-manager-error.ico-listing-manager-message,
+.ico-listing-manager-info.ico-listing-manager-message,
+.ico-listing-manager-message.ico-listing-manager-message {
+    border-top-color: #8fae1b
+}
+
+.ico-listing-manager-error.ico-listing-manager-message:before,
+.ico-listing-manager-info.ico-listing-manager-message:before,
+.ico-listing-manager-message.ico-listing-manager-message:before {
+    color: #8fae1b;
+    content: "\2713"
+}
+
+.ico-listing-manager-error.ico-listing-manager-info,
+.ico-listing-manager-info.ico-listing-manager-info,
+.ico-listing-manager-message.ico-listing-manager-info {
+    border-top-color: #1e85be
+}
+
+.ico-listing-manager-error.ico-listing-manager-info:before,
+.ico-listing-manager-info.ico-listing-manager-info:before,
+.ico-listing-manager-message.ico-listing-manager-info:before {
+    color: #1e85be;
+    content: "i";
+    font-family: Times, Georgia, serif;
+    font-style: italic
+}
+
+.ico-listing-manager-error.ico-listing-manager-error,
+.ico-listing-manager-info.ico-listing-manager-error,
+.ico-listing-manager-message.ico-listing-manager-error {
+    border-top-color: #b81c23
+}
+
+.ico-listing-manager-error.ico-listing-manager-error:before,
+.ico-listing-manager-info.ico-listing-manager-error:before,
+.ico-listing-manager-message.ico-listing-manager-error:before {
+    color: #b81c23;
+    content: "\00d7";
+    font-weight: 700
+}
+
+form#submit-ico-listing-form {
+    width: 100%;
+}
+
+h3.ico-subtitle {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.3rem;
+    line-height: 1.3rem!important;
+    margin: 40px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px!important;
+    font-weight: 400;
+}
+
+.ico-listing-manager-form fieldset {
+    margin: 0 0 10px;
+    padding: 0px;
+    line-height: 2em;
+    border: 0;
+    zoom: 1;
+}
+
+.ico-listing-manager-form fieldset:after,
+.ico-listing-manager-form fieldset:before {
+    content: "";
+    display: table
+}
+
+.ico-listing-manager-form fieldset:after {
+    clear: both
+}
+
+.ico-listing-manager-form fieldset label {
+    display: block;
+    margin: 0;
+    width: 30%;
+    font-size: 14px;
+    float: left;
+    vertical-align: middle
+}
+
+.ico-listing-manager-form fieldset label small {
+    opacity: .75;
+    font-size: .83em
+}
+
+.ico-listing-manager-form fieldset div.field {
+    width: 70%;
+    float: left;
+    font-size: 14px;
+    vertical-align: middle
+}
+
+.ico-listing-manager-form fieldset .wp-editor-container {
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+.ico-listing-manager-form fieldset .account-sign-in .button {
+    margin-right: .5em
+}
+
+
+.ico-listing-manager-form fieldset abbr.required {
+    color: red;
+    font-weight: 700;
+    border: 0
+}
+
+.ico-listing-manager-form fieldset input.input-text,
+.ico-listing-manager-form fieldset select,
+.ico-listing-manager-form fieldset textarea {
+    margin: 0;
+    vertical-align: middle;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	padding: 0.5em 0.6em;
+}
+
+.ico-listing-manager-form fieldset input[type=file].input-text {
+    height: 100px;
+    width: 100px;
+    font-size: 0px;
+    overflow: hidden;
+    text-indent: -999px;
+    background-color: #999;
+    background-image: url('upload-foto.png');
+	border-radius:5px;
+	cursor:pointer;
+}
+
+.ico-listing-manager-form fieldset input[type=file].input-text:before {
+    content: " ";
+    display: block;
+    height: 180px;
+    width: 180px;
+}
+
+.ico-listing-manager-form fieldset small.description {
+    opacity: .75;
+    font-size: .83em;
+    margin: 1.2em 0 0;
+    display: block;
+    line-height: 1.2em;
+}
+
+.ico-listing-manager-form fieldset .ico-listing-manager-uploaded-files {
+    display: table
+}
+
+.ico-listing-manager-form fieldset .ico-listing-manager-uploaded-files .ico-listing-manager-uploaded-file {
+    line-height: 2em;
+    margin: 0 10px 10px 0;
+    display: inline-table;
+}
+
+.ico-listing-manager-form fieldset .ico-listing-manager-uploaded-files .ico-listing-manager-uploaded-file .ico-listing-manager-uploaded-file-preview img,
+img.ico_img_preview{
+    max-height: 64px!important;
+    margin: 0;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+.ico-listing-manager-form fieldset .ico-listing-manager-uploaded-files .ico-listing-manager-uploaded-file .ico-listing-manager-uploaded-file-preview a {
+    display: block;
+    padding: 0px;
+    font-size: 11px;
+    font-style: normal;
+}
+
+.ico-listing-manager-form fieldset .ico-listing-manager-uploaded-files .ico-listing-manager-uploaded-file .ico-listing-manager-uploaded-file-name {
+    display: block
+}
+
+.ico-listing-manager-form .submit-ico-listing {
+    padding: 1em 0
+}
+
+.ico-listing-manager-form .ico-listing-manager-term-checklist {
+    list-style: none outside;
+    max-height: 200px;
+    overflow: auto;
+    margin: 0
+}
+
+.ico-listing-manager-form .ico-listing-manager-term-checklist li {
+    list-style: none outside;
+    margin: 0;
+    display: block;
+    float: none
+}
+
+.ico-listing-manager-form .ico-listing-manager-term-checklist li label {
+    width: auto;
+    float: none
+}
+
+.ico-listing-manager-form .ico-listing-manager-term-checklist li li {
+    margin: 0 0 0 2em
+}
+
+div.ico_listing {
+    margin-bottom: 1em
+}
+
+div.ico_listing ul.ico_listing {
+    margin: 0
+}
+
+.rp4wp-related-ico_listing>ul,
+ul.ico_listing {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #eee
+}
+
+.rp4wp-related-ico_listing>ul.loading,
+ul.ico_listing.loading {
+    min-height: 96px;
+    border-bottom: 1px solid #eee;
+    background: url(../images/ajax-loader.gif) no-repeat center 32px
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found,
+ul.ico_listing li.ico_listing,
+ul.ico_listing li.no_ico_listing_found {
+    list-style: none outside;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #eee
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing.ico_listing_position_filled a,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found.ico_listing_position_filled a,
+ul.ico_listing li.ico_listing.ico_listing_position_filled a,
+ul.ico_listing li.no_ico_listing_found.ico_listing_position_filled a {
+    opacity: .25
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing.no_ico_listing_found,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found.no_ico_listing_found,
+ul.ico_listing li.ico_listing.no_ico_listing_found,
+ul.ico_listing li.no_ico_listing_found.no_ico_listing_found {
+    padding: 1em;
+    border-bottom: 1px solid #eee
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a,
+ul.ico_listing li.ico_listing a,
+ul.ico_listing li.no_ico_listing_found a {
+    display: block;
+    padding: 1em 1em 1em 2em;
+    border: 0;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+    line-height: 1.5em;
+    text-decoration: none
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a:focus,
+.rp4wp-related-ico_listing>ul li.ico_listing a:hover,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a:focus,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a:hover,
+ul.ico_listing li.ico_listing a:focus,
+ul.ico_listing li.ico_listing a:hover,
+ul.ico_listing li.no_ico_listing_found a:focus,
+ul.ico_listing li.no_ico_listing_found a:hover {
+    background-color: #fcfcfc
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a img.company_logo,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a img.company_logo,
+ul.ico_listing li.ico_listing a img.company_logo,
+ul.ico_listing li.no_ico_listing_found a img.company_logo {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 1em;
+    float: left;
+    margin-right: 1em;
+    vertical-align: middle;
+    box-shadow: none
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a div.location,
+.rp4wp-related-ico_listing>ul li.ico_listing a div.position,
+.rp4wp-related-ico_listing>ul li.ico_listing a ul.meta,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.location,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.position,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a ul.meta,
+ul.ico_listing li.ico_listing a div.location,
+ul.ico_listing li.ico_listing a div.position,
+ul.ico_listing li.ico_listing a ul.meta,
+ul.ico_listing li.no_ico_listing_found a div.location,
+ul.ico_listing li.no_ico_listing_found a div.position,
+ul.ico_listing li.no_ico_listing_found a ul.meta {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a div.position,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.position,
+ul.ico_listing li.ico_listing a div.position,
+ul.ico_listing li.no_ico_listing_found a div.position {
+    float: left;
+    width: 55%;
+    padding: 0 0 0 42px;
+    line-height: 1.5em
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a div.position h3,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.position h3,
+ul.ico_listing li.ico_listing a div.position h3,
+ul.ico_listing li.no_ico_listing_found a div.position h3 {
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    font-size: inherit
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a div.position .company,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.position .company,
+ul.ico_listing li.ico_listing a div.position .company,
+ul.ico_listing li.no_ico_listing_found a div.position .company {
+    color: #999
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a div.position .company .tagline,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.position .company .tagline,
+ul.ico_listing li.ico_listing a div.position .company .tagline,
+ul.ico_listing li.no_ico_listing_found a div.position .company .tagline {
+    margin-left: .5em
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a div.location,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a div.location,
+ul.ico_listing li.ico_listing a div.location,
+ul.ico_listing li.no_ico_listing_found a div.location {
+    float: left;
+    text-align: left;
+    width: 25%;
+    padding: 0 0 0 1em;
+    color: #999;
+    line-height: 1.5em
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a .meta,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a .meta,
+ul.ico_listing li.ico_listing a .meta,
+ul.ico_listing li.no_ico_listing_found a .meta {
+    float: right;
+    text-align: right;
+    width: 20%;
+    padding: 0 0 0 1em;
+    margin: 0;
+    line-height: 1.5em;
+    color: #999;
+    list-style: none outside
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a .meta li,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a .meta li,
+ul.ico_listing li.ico_listing a .meta li,
+ul.ico_listing li.no_ico_listing_found a .meta li {
+    list-style: none outside;
+    display: block;
+    margin: 0
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing a .meta .ico-listing-type,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found a .meta .ico-listing-type,
+ul.ico_listing li.ico_listing a .meta .ico-listing-type,
+ul.ico_listing li.no_ico_listing_found a .meta .ico-listing-type {
+    font-weight: 700
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing.ico_listing_position_featured a,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found.ico_listing_position_featured a,
+ul.ico_listing li.ico_listing.ico_listing_position_featured a,
+ul.ico_listing li.no_ico_listing_found.ico_listing_position_featured a {
+    background: #fefee5
+}
+
+.rp4wp-related-ico_listing>ul li.ico_listing.ico_listing_position_featured a:focus,
+.rp4wp-related-ico_listing>ul li.ico_listing.ico_listing_position_featured a:hover,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found.ico_listing_position_featured a:focus,
+.rp4wp-related-ico_listing>ul li.no_ico_listing_found.ico_listing_position_featured a:hover,
+ul.ico_listing li.ico_listing.ico_listing_position_featured a:focus,
+ul.ico_listing li.ico_listing.ico_listing_position_featured a:hover,
+ul.ico_listing li.no_ico_listing_found.ico_listing_position_featured a:focus,
+ul.ico_listing li.no_ico_listing_found.ico_listing_position_featured a:hover {
+    background-color: #fefed8
+}
+
+.widget ul.ico_listing li.ico_listing a {
+    padding: 1em 0
+}
+
+.widget ul.ico_listing li.ico_listing .position {
+    float: none;
+    width: auto;
+    padding: 0
+}
+
+.widget ul.ico_listing li.ico_listing ul.meta {
+    float: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    text-align: left
+}
+
+.widget ul.ico_listing li.ico_listing ul.meta li {
+    float: none;
+    display: inline;
+    padding: 0;
+    margin: 0 .5em 0 0;
+    font-weight: 400
+}
+
+.widget ul.ico_listing li.ico_listing ul.meta li:after {
+    padding: 0 0 0 .5em;
+    content: "\2023"
+}
+
+.widget ul.ico_listing li.ico_listing ul.meta li:last-child:after {
+    content: ''
+}
+
+.ico-listing-manager .ico-listing-type,
+.ico-listing-types .ico-listing-type,
+.ico_listing .ico-listing-type {
+    color: #f08d3c
+}
+
+.ico-listing-manager .full-time,
+.ico-listing-types .full-time,
+.ico_listing .full-time {
+    color: #90da36
+}
+
+.ico-listing-manager .part-time,
+.ico-listing-types .part-time,
+.ico_listing .part-time {
+    color: #f08d3c
+}
+
+.ico-listing-manager .temporary,
+.ico-listing-types .temporary,
+.ico_listing .temporary {
+    color: #d93674
+}
+
+.ico-listing-manager .freelance,
+.ico-listing-types .freelance,
+.ico_listing .freelance {
+    color: #39c
+}
+
+.ico-listing-manager .internship,
+.ico-listing-types .internship,
+.ico_listing .internship {
+    color: #6033cc
+}
+
+.single_ico_listing .company {
+    position: relative;
+    border: 1px solid #eee;
+    padding: 1em;
+    margin: 0 0 2em;
+    display: block;
+    clear: both;
+    min-height: 3em;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
+}
+
+.single_ico_listing .company img {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    left: 1em;
+    float: left;
+    vertical-align: middle;
+    box-shadow: none
+}
+
+.single_ico_listing .company .name {
+    margin: 0 0 0 3em;
+    padding: 0 0 0 1em;
+    line-height: 1.5em
+}
+
+.single_ico_listing .company .name a {
+    float: right;
+    margin-left: 1em
+}
+
+.single_ico_listing .company .tagline {
+    display: block;
+    margin: 0 0 0 42px;
+    padding: 0 0 0 1em;
+    line-height: 1.5em;
+    font-style: italic;
+    color: #999
+}
+
+.single_ico_listing .company .website:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-family: ico-listing-manager!important;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline;
+    content: '\e809'
+}
+
+.single_ico_listing .company .company_twitter:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-family: ico-listing-manager!important;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline;
+    content: '\e80a'
+}
+
+.single_ico_listing .company .company_video {
+    border-top: 1px solid #eee;
+    padding: 1em 0 0;
+    margin: 1em 0 0;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden
+}
+
+.single_ico_listing .company .company_video embed,
+.single_ico_listing .company .company_video iframe,
+.single_ico_listing .company .company_video object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: block
+}
+
+.single_ico_listing .meta {
+    list-style: none outside;
+    padding: 0;
+    margin: 0 0 1.5em;
+    overflow: hidden;
+    zoom: 1;
+    clear: both
+}
+
+.single_ico_listing .meta li {
+    margin: 0 1em 0 0;
+    padding: .5em;
+    float: left;
+    line-height: 1em;
+    color: #999
+}
+
+.single_ico_listing .meta .ico-listing-type.bekas {
+    background: #D06666;
+    color: #fff;
+}
+
+.single_ico_listing .meta .ico-listing-type.baru {
+    color: #fff;
+    background-color: #f08d3c
+}
+
+.single_ico_listing .meta .full-time {
+    background-color: #90da36
+}
+
+.single_ico_listing .meta .part-time {
+    background-color: #f08d3c
+}
+
+.single_ico_listing .meta .temporary {
+    background-color: #d93674
+}
+
+.single_ico_listing .meta .freelance {
+    background-color: #39c
+}
+
+.single_ico_listing .meta .internship {
+    background-color: #6033cc
+}
+
+.single_ico_listing .meta .listing-expired,
+.single_ico_listing .meta .position-filled {
+    color: #b81c23
+}
+
+.single_ico_listing .meta .location:before {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 18px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline;
+    content: "\f041"
+}
+
+.single_ico_listing .meta .date-posted:before {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 18px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline;
+    content: "\f017"
+}
+
+.single_ico_listing .meta .listing-expired:before,
+.single_ico_listing .meta .position-filled:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-family: ico-listing-manager!important;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline;
+    content: '\e80e'
+}
+
+.single_ico_listing .ico_listing_description {
+    margin: 0 0 1.5em
+}
+
+.ico-listing-manager-application-wrapper {
+    clear: both;
+    border: 1px solid #eee;
+    padding: .75em 1em 0;
+    margin: 1em 0;
+    line-height: 1.5em;
+    display: block;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
+}
+
+.ico-listing-manager-application-wrapper .application,
+.single_ico_listing .application {
+    padding: 0;
+    margin: 0 0 1em;
+    overflow: hidden
+}
+
+.ico-listing-manager-application-wrapper .application .application_button,
+.ico-listing-manager-application-wrapper .application .application_details,
+.single_ico_listing .application .application_button,
+.single_ico_listing .application .application_details {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.ico-listing-manager-application-wrapper .application .application_button,
+.single_ico_listing .application .application_button {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1em;
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    padding: .90909091em 2em;
+    outline: 0
+}
+
+.ico-listing-manager-application-wrapper .application .application_details,
+.single_ico_listing .application .application_details {
+    clear: both;
+    border: 1px solid #eee;
+    padding: .75em 1em 0;
+    margin: 1em 0;
+    line-height: 1.5em;
+    display: block;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
+}
+
+.ico-listing-manager-application-wrapper .application .application_details p,
+.single_ico_listing .application .application_details p {
+    margin: 0 0 .75em
+}
+
+.ico-listing-manager-application-wrapper .application .application_details:before,
+.single_ico_listing .application .application_details:before {
+    content: "";
+    position: absolute;
+    margin: -10px 0 0 0;
+    top: 0;
+    left: 5em;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #eee
+}
+
+.ico-listing-manager-application-wrapper .application .application_details:after,
+.single_ico_listing .application .application_details:after {
+    content: "";
+    position: absolute;
+    margin: -9px 0 0 1px;
+    left: 5em;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid #fff
+}
+
+.ico_listing_filters {
+    background: #eee;
+    zoom: 1
+}
+
+.ico_listing_filters:after,
+.ico_listing_filters:before {
+    content: "";
+    display: table
+}
+
+.ico_listing_filters:after {
+    clear: both
+}
+
+.ico_listing_filters .search_ico_listing {
+    padding: 1em;
+    zoom: 1
+}
+
+.ico_listing_filters .search_ico_listing:after,
+.ico_listing_filters .search_ico_listing:before {
+    content: "";
+    display: table
+}
+
+.ico_listing_filters .search_ico_listing:after {
+    clear: both
+}
+
+.ico_listing_filters .search_ico_listing div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.ico_listing_filters .search_ico_listing div label {
+    display: none
+}
+
+.ico_listing_filters .search_ico_listing div.filter_first,
+.ico_listing_filters .search_ico_listing div.search_keywords {
+    float: left;
+    padding-right: .5em;
+    width: 50%
+}
+
+.ico_listing_filters .search_ico_listing div.filter_last,
+.ico_listing_filters .search_ico_listing div.search_location {
+    float: right;
+    padding-left: .5em;
+    width: 50%
+}
+
+.ico_listing_filters .search_ico_listing div.filter_wide,
+.ico_listing_filters .search_ico_listing div.search_categories {
+    padding-top: .5em;
+    clear: both;
+    width: 100%
+}
+
+.ico_listing_filters .search_ico_listing div .showing_ico_listing a {
+    padding: .25em
+}
+
+.ico_listing_filters .search_ico_listing div .showing_ico_listing a.active {
+    background: #ddd;
+    text-decoration: none
+}
+
+.ico_listing_filters .search_ico_listing input,
+.ico_listing_filters .search_ico_listing select {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%
+}
+
+.ico_listing_filters .ico_listing_types {
+    list-style: none outside;
+    margin: 0;
+    padding: 0;
+    font-size: .83em;
+    background: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+    zoom: 1
+}
+
+.ico_listing_filters .ico_listing_types:after,
+.ico_listing_filters .ico_listing_types:before {
+    content: "";
+    display: table
+}
+
+.ico_listing_filters .ico_listing_types:after {
+    clear: both
+}
+
+.ico_listing_filters .ico_listing_types li {
+    margin: 0;
+    padding: .5em 1em;
+    float: left;
+    border-right: 1px solid #eee
+}
+
+.ico_listing_filters .ico_listing_types li:last-child {
+    border-right: 0
+}
+
+.ico_listing_filters .showing_ico_listing {
+    padding: .5em 1em;
+    display: none;
+    font-size: .83em;
+    background: #f9f9f9;
+    border-top: 1px solid #e5e5e5
+}
+
+.ico_listing_filters .showing_ico_listing a {
+    float: right;
+    padding-left: 10px;
+    border: 0
+}
+
+div.ico_listing .ico-listing-manager-pagination {
+    text-align: center;
+    display: block;
+    padding: 1em 0;
+    border-bottom: 1px solid #eee;
+    line-height: 1
+}
+
+div.ico_listing .load_previous {
+    border-top: 1px solid #eee
+}
+
+div.ico_listing .load_more_ico_listing+ul.ico_listing {
+    border-top: 0
+}
+
+div.ico_listing .load_more_ico_listing {
+    text-align: center;
+    display: block;
+    padding: 1em 1em 1em 2em;
+    border-bottom: 1px solid #eee;
+    font-weight: 700
+}
+
+div.ico_listing .load_more_ico_listing.loading {
+    background: url(../images/ajax-loader.gif) no-repeat center
+}
+
+div.ico_listing .load_more_ico_listing.loading strong {
+    visibility: hidden
+}
+
+div.ico_listing .load_more_ico_listing:focus,
+div.ico_listing .load_more_ico_listing:hover {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #eee
+}
+
+.ico_listing_preview {
+    padding: 0 1em 1em;
+    border: 5px solid #eee
+}
+
+.single-ico_listing .entry-header .attachment-post-thumbnail,
+.single-ico_listing .ico_listing.has-post-thumbnail .post-thumbnail {
+    display: none
+}
+
+.entry-content .ico_listing_preview_title,
+.ico_listing_preview_title {
+    padding: .5em 1em;
+    vertical-align: middle;
+    position: relative;
+    background: #eee
+}
+
+.entry-content .ico_listing_preview_title h2,
+.ico_listing_preview_title h2 {
+    margin: 0;
+    clear: none
+}
+
+.entry-content .ico_listing_preview_title .button,
+.ico_listing_preview_title .button {
+    float: right;
+    margin-left: .25em
+}
+
+.ico_listing_summary_shortcode {
+    border: 1px solid #ccc;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), inset 0 1px 0 rgba(255, 255, 255, .4);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.ico_listing_summary_shortcode.aligncenter {
+    display: block;
+    margin: 2em auto
+}
+
+.ico_listing_summary_shortcode.alignleft {
+    float: left;
+    margin: 0 2em 2em 0
+}
+
+.ico_listing_summary_shortcode.alignright {
+    float: right;
+    margin: 0 0 2em 2em
+}
+
+.ico_listing_summary_shortcode a {
+    text-decoration: none;
+    color: inherit
+}
+
+.ico_listing_summary_shortcode img {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-top-left-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4)
+}
+
+
+.ico_listing_summary_shortcode .ico_listing_summary_content {
+    padding: 0 1em
+}
+
+.ico_listing_summary_shortcode .meta {
+    font-style: italic;
+    color: #777
+}
+
+.ico_listing_summary_shortcode .ico-listing-type {
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), inset 0 1px 0 rgba(255, 255, 255, .4);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5em;
+    height: 1em;
+    width: auto;
+    min-width: 1em;
+    font-size: 1em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1em;
+    margin: -.5em -.5em 0 0
+}
+
+.ico_listing_summary_shortcode .ico-listing-type.full-time {
+    background-color: #90da36
+}
+
+.ico_listing_summary_shortcode .ico-listing-type.part-time {
+    background-color: #f08d3c
+}
+
+.ico_listing_summary_shortcode .ico-listing-type.temporary {
+    background-color: #d93674
+}
+
+.ico_listing_summary_shortcode .ico-listing-type.freelance {
+    background-color: #39c
+}
+
+.ico_listing_summary_shortcode .ico-listing-type.internship {
+    background-color: #6033cc
+}
+
+#ico-listing-manager-ico-listing-dashboard .account-sign-in .button {
+    margin-right: .5em
+}
+
+#ico-listing-manager-ico-listing-dashboard .account-sign-in .button:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-family: ico-listing-manager!important;
+    text-decoration: none;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    font-size: 16px;
+    margin: 0 2px 0 0;
+    *overflow: auto;
+    *zoom: 1;
+    *display: inline;
+    content: '\e808'
+}
+table.ico-listing-manager-ico-listing {
+    margin: 0 auto;
+    width: 98%;
+}
+table.ico-listing-manager-ico-listing tr {
+    border-bottom: 1px solid #ddd;
+}
+#ico-listing-manager-ico-listing-dashboard table ul.ico-listing-dashboard-actions {
+    margin: 0;
+    padding: 0;
+    font-size: 13px
+}
+span.dashboard_tgl {
+    font-size: 13px;
+}
+
+div.akhir_listing span {
+    clear: both;
+    display: block;
+    font-size: 13px;
+}
+
+#ico-listing-manager-ico-listing-dashboard table ul.ico-listing-dashboard-actions li {
+    float: none;
+    display: inline;
+    padding: 0;
+    margin: 0 .5em 0 0;
+    font-weight: 400;
+    list-style: none outside
+}
+
+#ico-listing-manager-ico-listing-dashboard table ul.ico-listing-dashboard-actions li:after {
+    padding: 0 0 0 .5em;
+    content: "\2023"
+}
+
+#ico-listing-manager-ico-listing-dashboard table ul.ico-listing-dashboard-actions li:last-child:after {
+    content: ''
+}
+
+#ico-listing-manager-ico-listing-dashboard table ul.ico-listing-dashboard-actions li .ico-listing-dashboard-action-delete {
+    color: red
+}
+
+#ico-listing-manager-ico-listing-dashboard table tr:focus ul.ico-listing-dashboard-actions,
+#ico-listing-manager-ico-listing-dashboard table tr:hover ul.ico-listing-dashboard-actions {
+    visibility: visible
+}
+
+#ico-listing-manager-ico-listing-dashboard table td,
+#ico-listing-manager-ico-listing-dashboard table th {
+    padding: .5em 1em .5em 0;
+	vertical-align: top;
+}
+
+#ico-listing-manager-ico-listing-dashboard table td.ico_listing_title{
+	width:400px;
+}
+#ico-listing-manager-ico-listing-dashboard h3.dashboard_title {
+    font-size: 18px;
+	font-weight: bold;
+}
+#ico-listing-manager-ico-listing-dashboard table .ico_listing_title small {
+    color: #999
+}
+
+#content nav.ico-listing-manager-pagination,
+#ico-listing-manager-ico-listing-dashboard table .applications,
+#ico-listing-manager-ico-listing-dashboard table .expires,
+#ico-listing-manager-ico-listing-dashboard table .filled,
+nav.ico-listing-manager-pagination {
+    text-align: center
+}
+
+#content nav.ico-listing-manager-pagination ul,
+nav.ico-listing-manager-pagination ul {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    clear: both;
+    border-left: 1px solid #eee;
+    margin: 1px
+}
+
+#content nav.ico-listing-manager-pagination ul li,
+nav.ico-listing-manager-pagination ul li {
+    border-right: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 0;
+    margin: 0;
+    float: left;
+    display: inline;
+    overflow: hidden
+}
+
+#content nav.ico-listing-manager-pagination ul li a,
+#content nav.ico-listing-manager-pagination ul li span,
+nav.ico-listing-manager-pagination ul li a,
+nav.ico-listing-manager-pagination ul li span {
+    margin: 0;
+    text-decoration: none;
+    line-height: 1em;
+    font-size: 1em;
+    font-weight: 400;
+    padding: .5em;
+    min-width: 1em;
+    display: block;
+    border: 0
+}
+
+#content nav.ico-listing-manager-pagination ul li a:focus,
+#content nav.ico-listing-manager-pagination ul li a:hover,
+#content nav.ico-listing-manager-pagination ul li span.current,
+nav.ico-listing-manager-pagination ul li a:focus,
+nav.ico-listing-manager-pagination ul li a:hover,
+nav.ico-listing-manager-pagination ul li span.current {
+    background: #eee;
+    color: #888
+}
+.ico-list-item-col-3 #ajaxy {
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    background: #fff;
+}
+
+#ajaxy .ico-card {
+    padding: 20px 20px 15px 20px;
+    color: #333;
+    font-size: 13px;    
+    border-bottom: 1px solid #ddd;
+}
+.white-desk.ico-card.featured {
+    border: 0 solid #f2c94c;
+    background-color: #fefaed;
+}
+.ico-card .ico-main-info {
+    height: 81px;
+    display: inline-table;
+    vertical-align: top;
+}
+.ico-icon {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    min-height: 60px;
+    overflow: hidden;
+    margin-right: 12px;
+    position: relative;
+    display: inline-table;
+    vertical-align: top;
+}
+.ico-icon img{
+    border-radius: 100%;
+}
+.ico-main-info h3 {
+    font-size: 16px;     
+    display: block;
+    margin-top: 0;
+    padding-bottom: 0px!important;
+    color: #000;
+    font-weight: bold;
+}
+@media only screen and (max-width:767px) {
+    ul.ico_listing li.ico_listing a,
+    ul.ico_listing li.no_ico_listing_found a {
+        padding: 1em
+    }
+    ul.ico_listing li.ico_listing a img.company_logo,
+    ul.ico_listing li.no_ico_listing_found a img.company_logo {
+        visibility: hidden
+    }
+    ul.ico_listing li.ico_listing a div.position,
+    ul.ico_listing li.no_ico_listing_found a div.position {
+        float: left;
+        width: 60%;
+        padding: 0
+    }
+    ul.ico_listing li.ico_listing a div.location,
+    ul.ico_listing li.no_ico_listing_found a div.location {
+        float: right;
+        width: 40%;
+        line-height: 2em;
+        font-size: .75em;
+        padding: 0 0 0 1em;
+        text-align: right
+    }
+    ul.ico_listing li.ico_listing a .meta,
+    ul.ico_listing li.no_ico_listing_found a .meta {
+        float: right;
+        width: 40%;
+        line-height: 2em;
+        font-size: .75em
+    }
+    ul.ico_listing li.ico_listing a .meta li,
+    ul.ico_listing li.no_ico_listing_found a .meta li {
+        font-size: 1em
+    }
+}
+
+.chosen-container {
+    width: 100%!important
+}
+
+.twenty-eleven ul.ico_listing li.ico_listing,
+.twenty-eleven ul.ico_listing li.no_ico_listing_found {
+    padding: 0!important
+}
+
+.twenty-ten .chosen-choices,
+.twenty-ten .ico_listing_types {
+    margin: 0!important
+}
+
+.rtl .ico-listing-manager-form label {
+    float: right
+}
+
+.rtl .entry-content .ico_listing_preview_title .button,
+.rtl .ico-listing-manager-form div.field,
+.rtl .ico_listing_preview_title .button {
+    float: left
+}
+
+.rtl .single_ico_listing .meta li {
+    float: right;
+    margin: 0 0 0 1em
+}
+
+h2.ico_preview {
+    font-size: 24px;
+    line-height: 0px!important;
+    padding: 15px 0!important;
+    margin: 0px!important;
+}
+.ico_img_preview {
+    max-height: 80px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: inline-table;
+    margin-right: 10px;
+}
+
+
+.ico-list-item-col-3 {
+    display: inline-table;
+    width: 31%;
+    margin: 10px;
+}
+
+.category-table-header h2 {
+    font-size: 21px;
+    font-weight: bold;
+}
+.date.active {
+    text-align: right;
+}
+div#view_all {
+    text-align: center;
+}
+div#view_all a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+div#view_all a .fa{
+    margin-left: 10px;
+    font-size: 18px;
+}
+.submit_ico {
+    display: table;
+    float: right;
+    margin: 40px 0;
+}
+.submit_ico a {
+    margin-right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.donasi {
+    background: #e3eedd;
+    border: 1px solid #7b926e;
+    font-size: 12px;
+    line-height: 21px;
+    padding: 10px;
+    color: #4c6b3b;
+    margin-bottom: 20px;
+}
+.donasi img {
+    width: 80px;
+    float: left;
+    margin-right: 10px;
+    background: #fff;
+    padding: 10px;
+}
+.txt-article>div.categ_top_table,.categ_top_table {
+    background: #383838;
+    padding: 5px 20px;
+    padding-bottom: 8px!important;
+}
+.categ_top_table span {
+    padding: 0;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display:inline-block;
+    width:160px;
+    text-transform: uppercase;
+}
+#careg_ico div#new_column_categ_invisted, #careg_ico #categ_desctop, #careg_ico .date.active {
+    width: 160px;
+    display: inline-table;
+    text-align: left!important;
+}
+.categ_top_table span.col_category, .categ_type {
+    width: 189px;
+    display: inline-table;
+    vertical-align: middle;
+}
+div#careg_ico .ico-row,
+.categ_top_table span.col_project {
+    width: 298px;
+    display: inline-table;
+}
+#careg_ico .ico-card .ico-main-info, #careg_ico .ico-card .ico-icon {
+    height: auto!important;
+    vertical-align: middle;
+}
+#careg_ico .ico-card .ico-icon img {
+    max-width: 40px!important;
+    max-height: 40px!important;
+    margin-top: 15px;
+}
